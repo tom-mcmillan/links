@@ -14,10 +14,12 @@ Header name and descriptor live in `<header>` at the top of `<main>`.
 
 ## Design
 
-- Flexoki "paper" surface (`#F2F0E5`) with Flexoki ink tones.
-- System font stack — no external font requests, no FOUT.
-- CSS is inlined in `index.html` for fastest first paint (file is small enough that a separate stylesheet would add an HTTP round-trip without meaningful gain).
-- No JavaScript, no build step, no dependencies.
+- Dark warm-ink surface (`#0F0E0C`) with Flexoki accent tones (red → orange → gold gradient on the italic display text).
+- Typography: Instrument Serif (via Google Fonts, `display=swap` so first paint is unblocked) for the headline; system monospace for eyebrows, card indexes, and the arrow; system sans for card titles.
+- Subtle drifting aurora gradient + SVG grain texture in the background, both pointer-events: none.
+- Staggered fade-in on card load (80ms stagger). `prefers-reduced-motion` disables all motion.
+- CSS inlined in `index.html` for fastest first paint.
+- No JavaScript, no build step, one external dependency (Google Fonts).
 
 ## Deployment
 
